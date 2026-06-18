@@ -1,6 +1,6 @@
 extends Node
 
-# Demonstrates that HTTPRequest cooperative mode caps download throughput
+# Demonstrates that HTTPRequest non-threaded mode caps download throughput
 # at download_chunk_size × frame_rate, regardless of connection speed.
 # Run with VSync disabled (Project Settings > Display > Window > VSync Mode = Disabled).
 
@@ -46,7 +46,7 @@ func _on_completed(_result: int, _code: int, _headers: PackedStringArray, body: 
 
 
 func _print_results() -> void:
-	print("\n== HTTPRequest cooperative mode: throughput vs. frame rate ==")
+	print("\n== HTTPRequest non-threaded mode: throughput vs. frame rate ==")
 	print("URL: %s" % URL)
 	print("download_chunk_size: %d bytes\n" % _http.download_chunk_size)
 	for r in _results:
