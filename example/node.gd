@@ -57,5 +57,3 @@ func _print_results() -> void:
 		print("  %-10s  %5d ms  %7.1f KB/s  (theoretical ceiling: %s)" % [
 			fps_label, r.elapsed_ms, throughput_kbps, ceiling_str
 		])
-	print("\nBefore fix: elapsed time scales inversely with fps cap.")
-	print("After fix:  all rows show similar throughput regardless of fps cap.")
